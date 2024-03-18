@@ -9,3 +9,5 @@ Zadanie 1 Paradygmaty
 ❌ 4.5 wymaganie 4 
 
 ❌ 5.0 wymaganie 5 
+
+Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia1
