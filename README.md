@@ -15,14 +15,14 @@ Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajeci
 
 Zadanie 2 Wzorce architektury  
 
-✅ 3.0 
+✅ 3.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/396d8811f73aedc3a94e9c8e4b9e692a30fd7b34
 
-✅ 3.5 
+❌ 3.5 
 
-✅ 4.0 
+❌ 4.0 
 
 ❌ 4.5 
 
 ❌ 5.0 
 
-Folder: 
+Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia2/Version1/projobj
