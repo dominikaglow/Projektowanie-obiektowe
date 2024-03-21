@@ -1,21 +1,19 @@
 package com.example.AuthorizationSpringBoot.controllers
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import com.example.AuthorizationSpringBoot.services.AuthService
+import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/users")
 class AuthController {
 
-    data class users(val id: Int, val name: String)
+    @PostMapping("/login")
+    fun login(@RequestBody req: LoginRequest): String {
+        val username = req.username
+        val password = req.password
 
-    @GetMapping
-    fun getUsers(): List<users> {
-        return listOf(
-            users(1, "John"),
-            users(2, "Jane"),
-            users(3, "Doe")
-        )
+        return AuthService.login(username, password)
     }
+
 }
+
+data class LoginRequest(val username: String, val password: String)
