@@ -26,3 +26,18 @@ Zadanie 2 Wzorce architektury
 ❌ 5.0 
 
 Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia2/Version1/projobj
+
+
+Zadanie 3 Wzorce kreacyjne
+
+Spring Boot (Kotlin)
+
+✅ 3.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/ba7fcbb8016227d8dcd1c58616d31cde76b550b5
+
+✅ 3.5 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/68bf80889bff6a4d2f1fae6e1fe2a210dd4400b8
+
+✅ 4.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/68bf80889bff6a4d2f1fae6e1fe2a210dd4400b8
+
+✅ 4.5 
+
+❌ 5.0 
