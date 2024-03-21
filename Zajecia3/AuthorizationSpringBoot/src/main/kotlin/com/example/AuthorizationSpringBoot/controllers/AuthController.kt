@@ -7,13 +7,15 @@ import org.springframework.web.bind.annotation.*
 @RestController
 class AuthController {
 
+    @Autowired
+    private lateinit var authService: AuthService
 
     @PostMapping("/login")
     fun login(@RequestBody req: LoginRequest): String {
         val username = req.username
         val password = req.password
 
-        return AuthService.login(username, password)
+        return authService.login(username, password)
     }
 
 }
