@@ -2,8 +2,11 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
+	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo"
 )
 
@@ -39,7 +42,12 @@ func main() {
 }
 
 func GetWeatherData(c echo.Context) error {
-	url := "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Warsaw,PL?key=8ZQGC4RFQ2X9RXCS4NCUXM8X3"
+	if err := godotenv.Load(); err != nil {
+		fmt.Println("Error loading .env file:", err)
+	}
+
+	apiKey := os.Getenv("API_KEY")
+	url := "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Warsaw,PL?key=" + apiKey
 	res, err := http.Get(url)
 	if err != nil {
 		return err
