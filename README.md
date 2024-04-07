@@ -53,7 +53,7 @@ Spring Boot (Kotlin)
 
 ✅ 3.5 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/3f87f8fec88828e089d3ad778d3661ac29a8cf45
 
-❌ 4.0 
+✅ 4.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/ccade1ea6ab004a88062f375533fb220c1c14179
 
 ❌ 4.5 
 
