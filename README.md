@@ -43,3 +43,20 @@ Spring Boot (Kotlin)
 ❌ 5.0 
 
 Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia3
+
+
+Zadanie 4 Wzorce strukturalne
+
+Spring Boot (Kotlin)
+
+✅ 3.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/05bb1d5fd89ca8e6c1c8c618c77c80ccbb683e8b
+
+✅ 3.5 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/3f87f8fec88828e089d3ad778d3661ac29a8cf45
+
+❌ 4.0 
+
+❌ 4.5 
+
+❌ 5.0 
+
+Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia4
