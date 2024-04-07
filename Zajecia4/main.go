@@ -5,43 +5,48 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"weather-api/models"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
-type WeatherDay struct {
-	DateTime      string   `json:"datetime"`
-	DateTimeEpoch int      `json:"datetimeEpoch"`
-	TempMax       float64  `json:"tempmax"`
-	TempMin       float64  `json:"tempmin"`
-	Temp          float64  `json:"temp"`
-	Conditions    string   `json:"conditions"`
-	Description   string   `json:"description"`
-	Icon          string   `json:"icon"`
-	Stations      []string `json:"stations"`
-}
-
-type WeatherData struct {
-	QueryCost       int          `json:"queryCost"`
-	Latitude        float64      `json:"latitude"`
-	Longitude       float64      `json:"longitude"`
-	ResolvedAddress string       `json:"resolvedAddress"`
-	Address         string       `json:"address"`
-	Timezone        string       `json:"timezone"`
-	TzOffset        float64      `json:"tzoffset"`
-	Description     string       `json:"description"`
-	Days            []WeatherDay `json:"days"`
-}
-
 func main() {
+	weatherDay, err := getWeatherData()
+	if err != nil {
+		panic("Failed to get weather data")
+	}
+
+	dbWeather, err := gorm.Open(sqlite.Open("weather.db"), &gorm.Config{})
+	if err != nil {
+		panic("Failed to connect to the database")
+	}
+
+	if err := dbWeather.AutoMigrate(&models.WeatherDay{}); err != nil {
+		panic("Failed to migrate the database")
+	}
+
+	for _, day := range weatherDay {
+		if result := dbWeather.Create(&day); result.Error != nil {
+			panic("Failed to insert data into the database")
+		}
+	}
 	e := echo.New()
-	e.GET("/data", GetWeatherData)
+	e.GET("/data", func(c echo.Context) error {
+		var days []models.WeatherDay
+		if result := dbWeather.Find(&days); result.Error != nil {
+			return result.Error
+		}
+		return c.JSON(http.StatusOK, days)
+
+	})
 	e.Logger.Fatal(e.Start(":3000"))
 
 }
 
-func GetWeatherData(c echo.Context) error {
+func getWeatherData() ([]models.WeatherDay, error) {
 	if err := godotenv.Load(); err != nil {
 		fmt.Println("Error loading .env file:", err)
 	}
@@ -50,15 +55,17 @@ func GetWeatherData(c echo.Context) error {
 	url := "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Warsaw,PL?key=" + apiKey
 	res, err := http.Get(url)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	defer res.Body.Close()
 
-	var weatherData WeatherData
+	var weatherData struct {
+		Days []models.WeatherDay `json:"days"`
+	}
 	err = json.NewDecoder(res.Body).Decode(&weatherData)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	return c.JSON(http.StatusOK, weatherData)
+	return weatherData.Days, nil
 }
