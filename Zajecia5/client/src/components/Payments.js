@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import "../stylesheets/Payments.css";
+import { Link } from "react-router-dom";
 
 const Payment = () => {
     const [payment, setPayment] = useState([]);
@@ -26,6 +27,9 @@ const Payment = () => {
                 <input type="text" placeholder="Expiry date" onChange={e => setPayment({...payment, expiryDate: e.target.value})} />
                 <input type="text" placeholder="CVV" onChange={e => setPayment({...payment, cvv: e.target.value})} />
                 <button className="payment-button" onClick={handlePayment}>Pay</button>
+                <Link to="/cart">
+                    <button className="payment-button">Back to Cart</button>
+                </Link>
             </div>
     );
 };

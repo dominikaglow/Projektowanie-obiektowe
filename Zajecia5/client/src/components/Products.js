@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import '../stylesheets/Products.css';
 import  {Link} from 'react-router-dom';
+import { CartContext } from "../CartContext";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useContext(CartContext);
     const [total, setTotalCost] = useState(0);
+    
 
     useEffect(() => {
         fetch('http://localhost:3001/products')
@@ -24,7 +26,7 @@ const Products = () => {
             updatedCart.push({ ...product, quantity: 1 });
         }
 
-        setTotalCost(total + product.price); // Dodajemy cenę produktu do całkowitej wartości koszyka
+        setTotalCost(total + product.price);
         setCart(updatedCart);
     };
 
@@ -67,9 +69,14 @@ const Products = () => {
                 <h2>Summary</h2>
                 <p>Total Cost: ${total.toFixed(2)}</p>
                 {cart.length > 0 && (
-                    <Link to="/payments">
-                        <button>Pay</button>
+                    <>
+                    <Link to="/cart">
+                        <button>View Cart</button>
                     </Link>
+                    <Link to="/payments">
+                        <button>Proceed to Payment</button>
+                    </Link>
+                </>
                 )}
             </div>
         </div>
