@@ -57,6 +57,8 @@ Zadanie 4 Wzorce strukturalne
 
 ❌ 5.0 
 
+Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia4
+
 
 Zadanie 5 Wzorce behawioralne React (JavaScript)
 
@@ -64,7 +66,7 @@ Zadanie 5 Wzorce behawioralne React (JavaScript)
 
 ✅ 3.5 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/0fc99fdf3886a51cddce34d85856a53e5206513b
 
-✅ 4.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/0fc99fdf3886a51cddce34d85856a53e5206513bs
+✅ 4.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/2b023013adeeef87e97e9c8fad657d5a65437e48
 
 ❌ 4.5 
 
