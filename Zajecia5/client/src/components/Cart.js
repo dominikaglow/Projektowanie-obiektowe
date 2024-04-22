@@ -6,6 +6,7 @@ import "../stylesheets/Cart.css";
 
 const Cart = () => {
     const [cart, setCart] = useContext(CartContext);
+    const totalCost = cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
 
     return (
         <div className="cart">
@@ -21,6 +22,7 @@ const Cart = () => {
                             </li>
                         ))}
                     </ul>
+                    <p>Total Cost: ${totalCost}</p>
                     <Link to="/payments">
                         <button>Proceed to Payment</button>
                     </Link>

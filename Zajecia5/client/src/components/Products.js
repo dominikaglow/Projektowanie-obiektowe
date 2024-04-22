@@ -6,7 +6,6 @@ import { CartContext } from "../CartContext";
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useContext(CartContext);
-    const [total, setTotalCost] = useState(0);
     
 
     useEffect(() => {
@@ -25,13 +24,12 @@ const Products = () => {
         } else {
             updatedCart.push({ ...product, quantity: 1 });
         }
-
-        setTotalCost(total + product.price);
         setCart(updatedCart);
     };
 
     const removeFromCart = (product) => {
         const cartProducts = [...cart];
+        console.log(product.id);
         const cartItem = cartProducts.find(item => item.id === product.id);
         if(cartItem) {
             if(cartItem.quantity  === 1) {
@@ -41,7 +39,7 @@ const Products = () => {
                 cartItem.quantity = cartItem.quantity - 1;
                 setCart(cartProducts);
             }
-            setTotalCost(total - cartItem.price);
+            console.log(cart);
         }
     };
 
@@ -67,7 +65,6 @@ const Products = () => {
             </ul>
             <div className='summary'>
                 <h2>Summary</h2>
-                <p>Total Cost: ${total.toFixed(2)}</p>
                 {cart.length > 0 && (
                     <>
                     <Link to="/cart">
