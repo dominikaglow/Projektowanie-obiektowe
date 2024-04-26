@@ -17,19 +17,19 @@ const Cart = () => {
                 <>
                     <ul>
                         {cart.map(item => (
-                            <li key={item.id}>
+                            <li className='list' key={item.id}>
                                 {item.name} - Price: {item.price.toFixed(2)} - Quantity: {item.quantity}
                             </li>
                         ))}
                     </ul>
-                    <p>Total Cost: ${totalCost}</p>
+                    <p className="totalCost">Total Cost: ${totalCost}</p>
                     <Link to="/payments">
                         <button>Proceed to Payment</button>
                     </Link>
                 </>
             )}
             <Link to="/products">
-                <button>Back to Products</button>
+                <button className="backToProducts">Back to Products</button>
             </Link>
         </div>
     );

@@ -14,6 +14,10 @@ const products = [
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send('Server is running');
+});
+
 app.get('/products', (req, res) => {
     res.json(products);
 });

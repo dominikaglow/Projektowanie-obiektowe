@@ -20,7 +20,11 @@ const Products = () => {
         const cartItem = updatedCart.find(item => item.id === product.id);
 
         if (cartItem) {
-            cartItem.quantity = cartItem.quantity + 1;
+            if (cartItem.quantity < 10) {
+                cartItem.quantity = cartItem.quantity + 1;
+            } else {
+                alert('Maximum quantity reached for this product.');
+            }
         } else {
             updatedCart.push({ ...product, quantity: 1 });
         }
@@ -57,7 +61,7 @@ const Products = () => {
                     <li key={product.id} className='item'>
                         <span className="product-name">{product.name}</span> - <span className="product-price">${product.price.toFixed(2)}</span>
                         {isProductInCart(product) ? (
-                            <button onClick={() => removeFromCart(product)}>Remove from cart</button>
+                            <button className='removeFromCart' onClick={() => removeFromCart(product)}>Remove from cart</button>
                         ) : ''}
                         <button onClick={() => addToCart(product)}>Add to cart</button>
                     </li>
