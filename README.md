@@ -73,3 +73,7 @@ Zadanie 5 Wzorce behawioralne React (JavaScript)
 ❌ 5.0 
 
 Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia5
+
+Zadanie 6 Zapaszki Sonar (JS)
+
+Repozytorium: https://github.com/dominikaglow/ProjektowanieObiektowe_Zajecia6
