@@ -76,4 +76,5 @@ Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajeci
 
 Zadanie 6 Zapaszki Sonar (JS)
 
-Repozytorium: https://github.com/dominikaglow/ProjektowanieObiektowe_Zajecia6
+Repozytorium klient: https://github.com/dominikaglow/Zadanie6_client
+Repozytorium serwer: https://github.com/dominikaglow/Zadanie6_server
