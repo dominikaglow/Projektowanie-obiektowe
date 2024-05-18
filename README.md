@@ -78,3 +78,16 @@ Zadanie 6 Zapaszki Sonar (JS)
 
 Repozytorium klient: https://github.com/dominikaglow/Zadanie6_client
 Repozytorium serwer: https://github.com/dominikaglow/Zadanie6_server
+
+
+Zadanie 7 Antywzorce Vapor (Swift)
+
+✅ 3.0 https://github.com/dominikaglow/Projektowanie-obiektowe/commit/0f19e4b3eb3eb86de5e56a13b6ab6b21be2c2ca2
+
+❌ 3.5 
+
+❌ 4.0 
+
+❌ 4.5 
+
+❌ 5.0 
