@@ -4,7 +4,7 @@ import struct Foundation.UUID
 /// Property wrappers interact poorly with `Sendable` checking, causing a warning for the `@ID` property
 /// It is recommended you write your model with sendability checking on and then suppress the warning
 /// afterwards with `@unchecked Sendable`.
-final class Todo: Model, @unchecked Sendable {
+final class Product: Model, @unchecked Sendable {
     static let schema = "products"
     
     @ID(key: .id)
@@ -24,7 +24,7 @@ final class Todo: Model, @unchecked Sendable {
         self.price = price
     }
     
-    func toDTO() -> TodoDTO {
+    func toDTO() -> ProductDTO {
         .init(
             id: self.id,
             name: self.name,

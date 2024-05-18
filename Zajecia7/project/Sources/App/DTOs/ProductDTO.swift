@@ -1,13 +1,13 @@
 import Fluent
 import Vapor
 
-struct TodoDTO: Content {
+struct ProductDTO: Content {
     var id: UUID?
     var name: String?
     var price: Double?
     
-    func toModel() -> Todo {
-        let model = Todo()
+    func toModel() -> Product {
+        let model = Product()
         
         model.id = self.id
         if let name = self.name {

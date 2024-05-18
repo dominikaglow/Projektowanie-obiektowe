@@ -1,6 +1,6 @@
 import Fluent
 
-struct CreateTodo: AsyncMigration {
+struct CreateProducts: AsyncMigration {
     func prepare(on database: Database) async throws {
         print("Running migration: Creating 'products' table")
         try await database.schema("products")
