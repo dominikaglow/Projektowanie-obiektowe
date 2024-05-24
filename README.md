@@ -104,3 +104,4 @@ Zad 8 Mobile first (Android)
 ❌ 4.5 
 
 ❌ 5.0 
+demo: https://github.com/dominikaglow/Projektowanie-obiektowe/blob/main/Zajecia8/demos/demo.md
