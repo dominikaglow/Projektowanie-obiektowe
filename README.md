@@ -92,6 +92,8 @@ Zadanie 7 Antywzorce Vapor (Swift)
 
 ❌ 5.0 
 
+Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia7
+
 
 Zad 8 Mobile first (Android)
 
@@ -105,6 +107,7 @@ Zad 8 Mobile first (Android)
 
 ❌ 5.0 
 demo: https://github.com/dominikaglow/Projektowanie-obiektowe/blob/main/Zajecia8/demos/demo.md
+Folder: https://github.com/dominikaglow/Projektowanie-obiektowe/tree/main/Zajecia8
 
 
 Zadanie 9 Testy
